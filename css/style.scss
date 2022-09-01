@@ -1,0 +1,143 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    transform: scale(0.001);
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    animation: entrada 1 forwards 2s 2s;
+}
+
+.cuadrado {
+    margin: 30px auto;
+    width: 60%;
+    height: 70%;
+    padding: 5px;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: cambiarC infinite 4s 3s;
+
+    img {
+        width: 60%;
+        height: 80%;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 1.5em;
+        font-weight: 800;
+        transition: 0.5s;
+        background-color: rgb(212, 221, 230);
+
+        &:hover {
+            background-color: rgb(242, 240, 255);
+            color: rgb(137, 222, 10);
+        }
+
+        &:active {
+            background: rgb(224, 222, 222);
+            color: rgb(109, 176, 8);
+        }
+    }
+}
+
+.FuegosArti {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.respuesta {
+    font-size: 3em;
+    font-weight: 900;
+    animation: cambiarT infinite 2s;
+}
+
+.noMostrar {
+    display: none;
+}
+
+@keyframes cambiarT {
+    0% {
+        color: rgb(218, 4, 0);
+    }
+    25% {
+        color: rgb(76, 218, 0);
+    }
+    50% {
+        color: rgb(0, 40, 218);
+    }
+    75% {
+        color: rgb(218, 0, 207);
+    }
+    100% {
+        color: rgb(219, 26, 42);
+    }
+}
+
+@keyframes cambiarC {
+    0% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgb(9, 255, 0), 0 0 70px rgb(0, 251, 255), 0 0 80px rgb(179, 0, 255), 0 0 100px rgb(132, 0, 255), 0 0 150px red, 0 0 200px rgb(51, 0, 255);
+    }
+
+    50% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px greenyellow, 0 0 35px green, 0 0 40px green, 0 0 50px greenyellow, 0 0 75px greenyellow;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgb(9, 255, 0), 0 0 70px rgb(0, 251, 255), 0 0 80px rgb(179, 0, 255), 0 0 100px rgb(132, 0, 255), 0 0 150px red, 0 0 200px rgb(51, 0, 255);
+    }
+}
+
+@keyframes entrada {
+    0% {
+        transform: scale(0.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 560px) {
+
+    .cuadrado {
+    width: 85%;
+    height: 85%;
+
+    img {
+        width: 80%;
+        height: 80%;
+        margin-bottom: 20px;
+    }
+    
+    button {font-size: 0.9em;}
+    }
+
+    .respuesta { font-size: 1.5em;}
+
+    .FuegosArti {
+        min-width: 50%;
+        right: -345px;
+    }
+}
